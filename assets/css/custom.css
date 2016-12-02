@@ -1,0 +1,63 @@
+/*PROPIOS*/
+
+.has-error{
+  border: 2px solid red;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.callout.callout-danger
+{
+  background-color: red;
+  padding: 5px;
+  color: white;
+}
+
+.bg-maroon {
+  background-color: #83020e;
+}
+
+.title {
+  background-color: #0b2037; 
+  color: white; 
+  padding: 5px 15px; 
+  margin-bottom: 3px;
+}
+
+.sub-title {
+  background-color: #83020e; 
+  color: white; 
+  padding: 5px 15px; 
+  margin-bottom: 3px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
