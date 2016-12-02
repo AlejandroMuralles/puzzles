@@ -120,7 +120,7 @@
 
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
-                                    <img src="{{asset('assets/imagenes/')}}/{{Auth::user()->colaborador->foto}}" alt="user-img" class="img-circle">
+                                    <img src="{{asset('assets/imagenes/')}}/" alt="user-img" class="img-circle">
                                     {{Auth::user()->username}} </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('cambiar_password')}}"><i class="ti-settings m-r-5"></i> Cambiar Contraseña</a></li>

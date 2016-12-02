@@ -7,30 +7,13 @@ use App\App\Entities\Cliente;
 use App\App\Repositories\ClienteRepo;
 use App\App\Managers\ClienteManager;
 
-use App\App\Repositories\ConsorcioRepo;
-use App\App\Repositories\PaisRepo;
-use App\App\Repositories\DepartamentoRepo;
-use App\App\Repositories\MunicipioRepo;
-use App\App\Repositories\ContactoRepo;
-
 class ClienteController extends BaseController {
 
 	protected $clienteRepo;
-	protected $consorcioRepo;
-	protected $paisRepo;
-	protected $departamentoRepo;
-	protected $municipioRepo;
-	protected $contactoRepo;
 
-	public function __construct(ClienteRepo $clienteRepo, ConsorcioRepo $consorcioRepo, PaisRepo $paisRepo, DepartamentoRepo $departamentoRepo, MunicipioRepo $municipioRepo,
-		ContactoRepo $contactoRepo)
+	public function __construct(ClienteRepo $clienteRepo)
 	{
 		$this->clienteRepo = $clienteRepo;
-		$this->consorcioRepo = $consorcioRepo;
-		$this->paisRepo = $paisRepo;
-		$this->departamentoRepo = $departamentoRepo;
-		$this->municipioRepo = $municipioRepo;
-		$this->contactoRepo = $contactoRepo;
 
 		View::composer('layouts.admin', 'App\Http\Controllers\AdminMenuController');
 	}
@@ -41,16 +24,13 @@ class ClienteController extends BaseController {
 		return View::make('administracion/clientes/index', compact('clientes'));
 	}
 
-	public function mostrarAgregar($tipoCliente){
-		$consorcios = $this->consorcioRepo->lists('nombre','id');
-		$paises = $this->paisRepo->lists('nombre','id');
-		return View::make('administracion/clientes/agregar', compact('consorcios','paises','tipoCliente'));
+	public function mostrarAgregar(){
+		return View::make('administracion/clientes/agregar');
 	}
 
-	public function agregar($tipoCliente)
+	public function agregar()
 	{
 		$data = Input::all();
-		$data['tipo_cliente'] = $tipoCliente;
 		$manager = new ClienteManager(new Cliente(), $data);
 		$manager->save();
 		Session::flash('success', 'Se agregó el cliente con éxito.');

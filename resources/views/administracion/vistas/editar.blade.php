@@ -19,7 +19,7 @@
 
 				{!! Field::checkbox('menu') !!}
 
-				{!! Field::text('icono', null, ['data-required'=>'false']) !!}
+				{!! Field::text('parametros', null, ['data-required'=>'false']) !!}
 
 
 				<br/>

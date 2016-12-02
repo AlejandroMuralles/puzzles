@@ -34,9 +34,9 @@
             <div>
                 <i class="fa fa-users text-primary"></i>
                 <div class="wid-icon-info">
-                    <p class="text-muted m-b-5 font-13 text-uppercase">Colaboradores</p>
+                    <p class="text-muted m-b-5 font-13 text-uppercase">Servicios</p>
                     <h4 class="m-t-0 m-b-5 counter"></h4>
-                    <small class="text-success"><a href="{{route('colaboradores')}}" class="btn btn-primary btn-xs">Ver</a></small>
+                    <small class="text-success"><a href="#" class="btn btn-primary btn-xs">Ver</a></small>
                 </div>
             </div>
         </div>

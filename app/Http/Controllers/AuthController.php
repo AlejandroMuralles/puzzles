@@ -28,18 +28,16 @@ class AuthController extends BaseController {
 		if(Auth::attempt($credentials))
 		{
 			$permisoRepo = new PermisoRepo();
-			$menuPublico = $permisoRepo->getMenu(Auth::user()->perfil_id, 0);
+			$menuPublico = $permisoRepo->getMenu(Auth::user()->perfil_id, 0); 
 			Session::set('menuPublico',$menuPublico);
 			$menuAdmin = $permisoRepo->getMenu(Auth::user()->perfil_id, 1);
 			Session::set('menuAdmin',$menuAdmin);
-
-
 			if(Auth::user()->primera_vez){
 				return Redirect::route('cambiar_password');
 			}
 			return Redirect::route('dashboard');
 		}
-		
+		dd('eeror');
 		return Redirect::back()->with('login-error',1);
 	}
 

@@ -7,19 +7,16 @@ use App\App\Managers\UserManager;
 use App\App\Entities\User;
 use App\App\Repositories\UserRepo;
 
-use App\App\Repositories\ColaboradorRepo;
 use App\App\Repositories\PerfilRepo;
 
 class UserController extends BaseController {
 
 	protected $userRepo;
-	protected $colaboradorRepo;
 	protected $perfilRepo;
 
-	public function __construct(UserRepo $userRepo, ColaboradorRepo $colaboradorRepo, PerfilRepo $perfilRepo)
+	public function __construct(UserRepo $userRepo, PerfilRepo $perfilRepo)
 	{
 		$this->userRepo = $userRepo;
-		$this->colaboradorRepo = $colaboradorRepo;
 		$this->perfilRepo = $perfilRepo;
 		View::composer('layouts.admin', 'App\Http\Controllers\AdminMenuController');
 	}

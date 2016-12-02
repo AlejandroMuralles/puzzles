@@ -3,7 +3,7 @@
 namespace App\App\Entities;
 
 class Vista extends \Eloquent {
-	protected $fillable = ['nombre','ruta','icono','menu','modulo_id'];
+	protected $fillable = ['nombre','ruta','parametros','menu','modulo_id'];
 
 	protected $table = 'vista';
 

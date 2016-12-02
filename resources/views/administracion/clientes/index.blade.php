@@ -13,16 +13,13 @@
     <div class="col-lg-12">
         <div class="card-box">
             <div class="table-responsive">
-            	<a href="{{ route('agregar_cliente','C') }}" class="btn btn-primary">Agregar Cliente</a>
-            	<a href="{{ route('agregar_cliente','E') }}" class="btn btn-primary">Agregar Empresa</a>
+            	<a href="{{ route('agregar_cliente') }}" class="btn btn-primary">Agregar</a>
             	<br/><br/>
                 <table id="table" class="table">
 					<thead>
 						<tr>
 							<th>NOMBRE</th>
-							<th>CORREO</th>
-							<th>DPI</th>
-							<th>TIPO</th>
+							<th>REFERIDO POR</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -30,13 +27,9 @@
 						@foreach($clientes as $cliente)
 							<tr>
 								<td>{{ $cliente->nombre }}</td>
-								<td>{{ $cliente->corre }}</td>
-								<td>{{ $cliente->dpi }}</td>
-								<td>{{ $cliente->tipo_cliente }}</td>
+								<td>{{ $cliente->referido_por }}</td>
 								<td>
-									<a href="{{route('ver_cliente',$cliente->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
 									<a href="{{route('editar_cliente',$cliente->id)}}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
-									<a href="{{route('contactos',$cliente->id)}}" class="btn btn-inverse btn-xs"><i class="fa fa-users"></i></a>
 								</td>
 							</tr>
 						@endforeach

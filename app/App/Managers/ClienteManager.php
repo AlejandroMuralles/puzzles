@@ -2,7 +2,7 @@
 
 namespace App\App\Managers;
 
-class VistaManager extends BaseManager
+class ClienteManager extends BaseManager
 {
 
 	protected $entity;
@@ -19,8 +19,8 @@ class VistaManager extends BaseManager
 
 		$rules = [
 			'nombre'  => 'required',
-			'modulo_id' => 'required',
-			'ruta' => 'required'
+			'referido_por'  => 'required',
+
 		];
 
 		return $rules;
@@ -28,10 +28,8 @@ class VistaManager extends BaseManager
 
 	function prepareData($data)
 	{
-		if(!isset($data['menu']))
-			$data['menu'] = 0;
-		if($data['parametros'] == '')
-			$data['parametros'] = null;
+		if(!isset($data['consorcio_id']) || $data['consorcio_id'] == '')
+			$data['consorcio_id'] = null;
 		return $data;
 	}
 

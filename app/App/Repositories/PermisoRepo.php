@@ -29,7 +29,7 @@ class PermisoRepo extends BaseRepo {
 	public function getMenu($perfilId)
 	{
 		$sql = '
-			SELECT m.id as modulo_id, m.nombre nombre_modulo, m.icono icono_modulo, v.id vista_id, v.nombre nombre, v.icono icono, v.ruta ruta
+			SELECT m.id as modulo_id, m.nombre nombre_modulo, m.icono icono_modulo, v.id vista_id, v.nombre nombre, v.ruta ruta
 			FROM permiso p, vista v, modulo m
 			WHERE p.perfil_id = ' .$perfilId . '
 				AND p.vista_id = v.id 
