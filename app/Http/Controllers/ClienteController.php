@@ -31,6 +31,7 @@ class ClienteController extends BaseController {
 	public function agregar()
 	{
 		$data = Input::all();
+		$data['estado'] = 'A';
 		$manager = new ClienteManager(new Cliente(), $data);
 		$manager->save();
 		Session::flash('success', 'Se agregó el cliente con éxito.');

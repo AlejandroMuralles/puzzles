@@ -21,7 +21,20 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('Cliente/agregar', ['as' => 'agregar_cliente', 'uses' => 'ClienteController@agregar']);
 	Route::get('Cliente/editar/{id}', ['as' => 'editar_cliente', 'uses' => 'ClienteController@mostrarEditar']);
 	Route::put('Cliente/editar/{id}', ['as' => 'editar_cliente', 'uses' => 'ClienteController@editar']);
-	Route::get('Cliente/ver/{id}', ['as' => 'ver_cliente', 'uses' => 'ClienteController@mostrarVer']);
+
+	/* SERVICIOS */
+	Route::get('Servicio/listado', ['as' => 'servicios', 'uses' => 'ServicioController@listado']);
+	Route::get('Servicio/agregar', ['as' => 'agregar_servicio', 'uses' => 'ServicioController@mostrarAgregar']);
+	Route::post('Servicio/agregar', ['as' => 'agregar_servicio', 'uses' => 'ServicioController@agregar']);
+	Route::get('Servicio/editar/{id}', ['as' => 'editar_servicio', 'uses' => 'ServicioController@mostrarEditar']);
+	Route::put('Servicio/editar/{id}', ['as' => 'editar_servicio', 'uses' => 'ServicioController@editar']);
+
+	/* PAGO DE SERVICIOS */
+	Route::get('Servicio-Pago/listado', ['as' => 'servicios_pagos', 'uses' => 'ServicioPagoController@listado']);
+	Route::get('Servicio-Pago/agregar/{servicioId}', ['as' => 'agregar_servicio_pago', 'uses' => 'ServicioPagoController@mostrarAgregar']);
+	Route::post('Servicio-Pago/agregar/{servicioId}', ['as' => 'agregar_servicio_pago', 'uses' => 'ServicioPagoController@agregar']);
+	Route::get('Servicio-Pago/editar/{id}', ['as' => 'editar_servicio_pago', 'uses' => 'ServicioPagoController@mostrarEditar']);
+	Route::put('Servicio-Pago/editar/{id}', ['as' => 'editar_servicio_pago', 'uses' => 'ServicioPagoController@editar']);
 
 	/* USUARIOS */
 	Route::get('Usuarios/listado', ['as' => 'usuarios', 'uses' => 'UserController@mostrarUsuarios']);

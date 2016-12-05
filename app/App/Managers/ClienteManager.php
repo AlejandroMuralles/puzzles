@@ -28,8 +28,6 @@ class ClienteManager extends BaseManager
 
 	function prepareData($data)
 	{
-		if(!isset($data['consorcio_id']) || $data['consorcio_id'] == '')
-			$data['consorcio_id'] = null;
 		return $data;
 	}
 

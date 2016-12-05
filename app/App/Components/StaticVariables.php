@@ -20,48 +20,10 @@ class StaticVariables {
 		'I' => 'INACTIVO'
 	];
 
-	protected $estadosRequerimientos = [
+	protected $estadosServiciosPagos = [
 		'C' => 'COBRADO',
 		'N' => 'NO COBRADO',
 		'A' => 'ANULADO'
-	];
-
-	protected $estadosPoliza = [
-		'S'	=> 'SOLICITUD',
-		'V' => 'VIGENTE',
-		'A' => 'ANULADA',
-		'C' => 'CANCELADA',
-		'R' => 'RENOVADA'
-	];
-
-	protected $estadosPolizaVehiculo = [
-		'P'	 => 'EMISION',
-		'V'  => 'VIGENTE',
-		'E'  => 'EXCLUIDO',
-		'SE' => 'S. EXCLUSION',
-		'A'  => 'ANULADO',
-		'R'  => 'RENOVADO'
-	];
-
-	protected $estadosPolizaCobertura = [
-		'P'	 => 'EMISION',
-		'V'  => 'VIGENTE',
-		'E'  => 'EXCLUIDA',
-		'SE' => 'S. EXCLUSION',
-		'A'  => 'ANULADA',
-		'R'  => 'RENOVADA'
-	];
-
-	protected $tiposPlaca = [
-		'P'  => 'Particular',
-		'C'  => 'Comercial',
-		'TC' => 'Transporte Comercial',
-		'M'  => 'Motocicleta'
-	];
-
-	protected $impuestos = [
-		'IVA' => 1,
-		'EMISION' => 2,
 	];
 
 	protected $formasPago = [
@@ -71,9 +33,10 @@ class StaticVariables {
 		'E' => 'EFECTIVO'
 	];
 
-	protected $prefixSolicitudPoliza = 'SP-';
-	protected $prefixSolicitudInclusion = 'SI-';
-	protected $prefixSolicitudExclusion = 'SE-';
+	protected $frecuenciasPago = [
+		'M' => 'MENSUAL',
+		'A' => 'ANUAL',
+	];
 
 	public function STipoUsuario($key) { return $this->tipoUsuario[$key]; }
 	public function getImpuesto($key) { return $this->impuestos[$key]; }
@@ -87,21 +50,14 @@ class StaticVariables {
 	public function getEstadosRequerimientos() { return $this->estadosRequerimientos; }
 	public function getEstadoRequerimiento($key) { return $this->estadosRequerimientos[$key]; }
 
-	public function getEstadosPoliza() { return $this->estadosPoliza; }
-	public function getEstadoPoliza($key) { return $this->estadosPoliza[$key]; }
-
-	public function getEstadosPolizaVehiculo() { return $this->estadosPolizaVehiculo; }
-	public function getEstadoPolizaVehiculo($key) { return $this->estadosPolizaVehiculo[$key]; }
-
-	public function getTiposPlaca() { return $this->tiposPlaca; }
-	public function getTipoPlaca($key) { return $this->tiposPlaca[$key]; }
-
-	public function getPrefixSolicitudPoliza(){ return $this->prefixSolicitudPoliza; }
-	public function getPrefixSolicitudInclusion(){ return $this->prefixSolicitudInclusion; }
-	public function getPrefixSolicitudExclusion(){ return $this->prefixSolicitudExclusion; }
+	public function getEstadosServiciosPagos() { return $this->estadosServiciosPagos; }
+	public function getEstadoServicioPago($key) { return $this->estadosServiciosPagos[$key]; }
 
 	public function getFormasPago() { return $this->formasPago; }
 	public function getFormaPago($key) { return $this->formasPago[$key]; }
+
+	public function getFrecuenciasPago() { return $this->frecuenciasPago; }
+	public function getFrecuenciaPago($key) { return $this->frecuenciasPago[$key]; }
 
 	public function arrayToCommaSeparatedList($array)
 	{

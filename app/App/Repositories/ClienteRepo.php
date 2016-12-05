@@ -11,4 +11,9 @@ class ClienteRepo extends BaseRepo{
 		return new Cliente;
 	}
 
+	public function getByEstado($estados)
+	{
+		return Cliente::whereIn('estado',$estados)->get();
+	}
+
 }
