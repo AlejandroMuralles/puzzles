@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('Servicio-Pago/agregar/{servicioId}', ['as' => 'agregar_servicio_pago', 'uses' => 'ServicioPagoController@agregar']);
 	Route::get('Servicio-Pago/editar/{id}', ['as' => 'editar_servicio_pago', 'uses' => 'ServicioPagoController@mostrarEditar']);
 	Route::put('Servicio-Pago/editar/{id}', ['as' => 'editar_servicio_pago', 'uses' => 'ServicioPagoController@editar']);
+	Route::get('Servicio-Pago/pendientes', ['as' => 'pagos_pendientes', 'uses' => 'ServicioPagoController@pendientes']);
 
 	/* USUARIOS */
 	Route::get('Usuarios/listado', ['as' => 'usuarios', 'uses' => 'UserController@mostrarUsuarios']);

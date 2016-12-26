@@ -50,6 +50,17 @@ class ServicioManager extends BaseManager
 				$servicioPago->costo = $this->entity->costo;
 				$servicioPago->pago = $this->entity->pago;
 				$servicioPago->fecha_cobro = $this->entity->fecha_inicio;
+				$servicioPago->fecha_inicio = $this->entity->fecha_inicio;
+				if($this->entity->frecuencia == 'M'){			
+					$fechaInicio = $this->entity->fecha_inicio;
+					$fechaInicio = strtotime ( '+30 day' , strtotime ( $fechaInicio ) ) ;
+					$servicioPago->fecha_fin = date ( 'Y-m-d' , $fechaInicio );
+				}
+				elseif($this->entity->frecuencia == 'A'){			
+					$fechaInicio = $this->entity->fecha_inicio;
+					$fechaInicio = strtotime ( '+365 day' , strtotime ( $fechaInicio ) ) ;
+					$servicioPago->fecha_fin = date ( 'Y-m-d' , $fechaInicio );
+				}
 				$servicioPago->estado = 'N';
 				$servicioPago->save();
 			\DB::commit();
